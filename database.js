@@ -8,13 +8,13 @@ db.transaction(tx => {
   );
 });
 
-const insertOrder = (product, quantity, price) => {
+export const insertOrder = (product, quantity, price) => {
   db.transaction(tx => {
     tx.executeSql('select * from ORDERS', [], (_, { rows }) => console.log(JSON.stringify(rows)));
   });
 };
 
-const getOrders = () => {
+export const getOrders = () => {
   db.transaction(tx => {
     tx.executeSql('select * from ORDERS',[], (_, { rows }) => console.log(JSON.stringify(rows)));
   });
