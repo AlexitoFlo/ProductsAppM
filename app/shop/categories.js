@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { Button, TextInput, View } from 'react-native';
-import { insertOrder } from '../../database'
+import { Button, TextInput, View, ScrollView, StyleSheet } from 'react-native';
+import { insertOrder, getOrders } from '../../database'
+
+const styles = StyleSheet.create({
+
+})
 
 const ProductRegistrationScreen = () => {
   const [product, setProduct] = useState('');
@@ -39,7 +43,14 @@ const ProductRegistrationScreen = () => {
         title="Registrar Producto"
         onPress={handleRegister}
       />
+      
+      <View>
+        <ScrollView style={styles.listArea}>
+           
+        </ScrollView>
+      </View>
     </View>
+
   );
 };
 
