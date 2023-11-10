@@ -27,9 +27,13 @@ export default function Layout() {
         name="categories"
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons name={focused ? "ios-list" : "ios-list-outline"} size={22} color="#85A43D" />
+            <Ionicons
+              name={focused ? "add-circle" : "add-circle-outline"}
+              size={22}
+              color="#85A43D"
+            />
           ),
-          tabBarLabel: "Categories",
+          tabBarLabel: "Add Products",
         }}
       />
     </Tabs>
