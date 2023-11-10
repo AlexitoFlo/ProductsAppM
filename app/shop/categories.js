@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { Button, TextInput, View, ScrollView, StyleSheet } from 'react-native';
+import { Button, TextInput, View, ScrollView, StyleSheet, Text, StatusBar, ToastAndroid } from 'react-native';
 import { insertOrder, getOrders } from '../../database'
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingTop: StatusBar.currentHeight,
+    backgroundColor: '#ABBDD8',
+    padding: 8,
+  },
 })
 
 const ProductRegistrationScreen = () => {
@@ -20,8 +26,12 @@ const ProductRegistrationScreen = () => {
     }
   };
 
+  function showToast() {
+    ToastAndroid.show('Producto agregado', ToastAndroid.SHORT);
+  }
+
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput
         placeholder="Producto"
         value={product}
@@ -41,12 +51,17 @@ const ProductRegistrationScreen = () => {
       />
       <Button
         title="Registrar Producto"
-        onPress={handleRegister}
+        onPress= {() => {
+          handleRegister();
+          showToast();
+      }}
       />
-      
+
       <View>
         <ScrollView style={styles.listArea}>
-           
+           <Text>
+              {getOrders}
+           </Text>
         </ScrollView>
       </View>
     </View>
