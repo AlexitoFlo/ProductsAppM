@@ -8,8 +8,12 @@ const ProductRegistrationScreen = () => {
   const [price, setPrice] = useState('');
 
   const handleRegister = () => {
-    insertOrder(product, quantity, price);
-    console.log(`Registrando producto: ${product}, Cantidad: ${quantity}, Precio: ${price}`);
+    if (!product || !quantity || !price) {
+      console.log('Por favor, completa todos los campos.')
+    } else {
+      insertOrder(product, quantity, price);
+      console.log(`Registrando producto: ${product}, Cantidad: ${quantity}, Precio: ${price}`);
+    }
   };
 
   return (
