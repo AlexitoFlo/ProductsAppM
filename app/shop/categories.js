@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, TextInput, View, ScrollView, StyleSheet, Text, StatusBar, ToastAndroid } from 'react-native';
 import { insertOrder, getOrders } from '../../database'
 
@@ -58,11 +58,6 @@ const ProductRegistrationScreen = () => {
       />
 
       <View>
-        <ScrollView style={styles.listArea}>
-           <Text>
-              {getOrders}
-           </Text>
-        </ScrollView>
       </View>
     </View>
 
