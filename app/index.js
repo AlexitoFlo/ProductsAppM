@@ -1,11 +1,12 @@
-import { Stack, router } from "expo-router";
-import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
+import { Link, Stack, router } from "expo-router";
+import { View, StyleSheet, ScrollView, Dimensions, Pressable, Text } from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
   useAnimatedStyle,
   interpolateColor,
 } from "react-native-reanimated";
+import { Button, YStack } from 'tamagui'
 
 import { Card } from "./components";
 import { CARD_HEIGHT } from "./components/card";
@@ -51,6 +52,7 @@ export default function Home() {
   };
 
   return (
+    <>
     <Animated.View style={style}>
       <Stack.Screen
         options={{
@@ -88,6 +90,14 @@ export default function Home() {
           <Card {...product} key={product.id} />
         ))}*/}
       </ScrollView>
+      <Link href="/shop/categories" asChild>
+        <Button alignSelf="center" size="$6" theme="active">
+          <Text>Add products</Text>
+        </Button>
+      </Link>
     </Animated.View>
+
+      
+    </>
   );
 }
