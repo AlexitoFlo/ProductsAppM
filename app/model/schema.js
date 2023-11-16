@@ -19,5 +19,34 @@ export default appSchema({
         { name: 'post_id', type: 'string', isIndexed: true },
       ]
     }),
+
+    // TODO: These would be the possible tables for the scheme: insumo, proveedor, compra, inventario*, categoria, ordencompra*, listaMercado*, detalleCompra*
+
+    /*
+    tableSchema({
+      name:'insumo',
+      colums: [
+        { name: 'description', type: 'string' },
+        { name: 'cantidad', type: 'number' },
+        { name: 'is_precio', type: 'boolean'},
+      ]
+    }),
+    tableSchema({
+      name:'proveedor',
+      colums: [
+        { name: 'nombre', type: 'string' },
+        { name: 'contacto', type: 'string' },
+        { name: 'direccion', type: 'string' },
+      ]
+    }),
+    tableSchema({
+      name:'listaMercado',
+      colums: [
+        { name: 'cantidad_necesaria', type: 'string' },
+        { name: 'insumo_id', type: 'string', isIndexed: true },
+      ]
+    }),
+    */
+
   ]
 })
