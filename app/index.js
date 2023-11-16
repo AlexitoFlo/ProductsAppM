@@ -52,7 +52,6 @@ export default function Home() {
   };
 
   return (
-    <>
     <Animated.View style={style}>
       <Stack.Screen
         options={{
@@ -96,8 +95,5 @@ export default function Home() {
         </Button>
       </Link>
     </Animated.View>
-
-      
-    </>
   );
 }
