@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+  buttonText: {
+    color: "#fff"
+  },
 });
 
 const { headerIcon, headerIconColor, headerTitle } = CARD_HEADERS.Home.Slider;
@@ -58,42 +61,44 @@ export default function Home() {
           title: "Home",
         }}
       />
-      <ScrollView
-        bounces={false}
-        showsVerticalScrollIndicator={false}
-        snapToOffsets={snapToOffsets}
-        decelerationRate="fast">
-        <View style={styles.slider}>
-          <Animated.ScrollView
-            onScroll={onScroll}
-            decelerationRate="fast"
-            snapToInterval={width}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            scrolEventThrottle={16}>
-            {PRODUCTS?.map((product, index) => (
-              <Card
-                {...product}
-                key={product.id}
-                headerTitle={headerTitle}
-                headerIcon={headerIcon}
-                headerIconColor={headerIconColor}
-                x={translateX}
-                index={index}
-                onSelect={onSelect}
-              />
-            ))}
-          </Animated.ScrollView>
-        </View>
-        {/*{PRODUCTS.map((product) => (
-          <Card {...product} key={product.id} />
-        ))}*/}
-      </ScrollView>
-      <Link href="/shop/categories" asChild>
-        <Button alignSelf="center" size="$6" theme="active">
-          <Text>Add products</Text>
-        </Button>
-      </Link>
+      <View>
+        <ScrollView
+          bounces={false}
+          showsVerticalScrollIndicator={false}
+          snapToOffsets={snapToOffsets}
+          decelerationRate="fast">
+          <View style={styles.slider}>
+            <Animated.ScrollView
+              onScroll={onScroll}
+              decelerationRate="fast"
+              snapToInterval={width}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              scrolEventThrottle={16}>
+              {PRODUCTS?.map((product, index) => (
+                <Card
+                  {...product}
+                  key={product.id}
+                  headerTitle={headerTitle}
+                  headerIcon={headerIcon}
+                  headerIconColor={headerIconColor}
+                  x={translateX}
+                  index={index}
+                  onSelect={onSelect}
+                />
+              ))}
+            </Animated.ScrollView>
+          </View>
+          {/*{PRODUCTS.map((product) => (
+            <Card {...product} key={product.id} />
+          ))}*/}
+        </ScrollView>
+        <Link href="/shop/categories" asChild>
+          <Button alignSelf="center" size="$6" theme="active">
+            <Text style={styles.buttonText}>Add products</Text>
+          </Button>
+        </Link>
+      </View>
     </Animated.View>
   );
 }
