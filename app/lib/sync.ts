@@ -13,7 +13,7 @@ await synchronize({
     const { changes, timestamp } = data as {
       changes: SyncDatabaseChangeSet
       timestamp: number
-    }
+    } 
 
     return { changes, timestamp }
   },
