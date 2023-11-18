@@ -1,5 +1,9 @@
 import { appSchema, tableSchema } from '@nozbe/watermelondb';
 
+const TableName = {
+  
+}
+
 export default appSchema({
   version: 1,
   tables: [
@@ -20,7 +24,7 @@ export default appSchema({
       ]
     }),
 
-    // TODO: These would be the possible tables for the scheme: insumo, proveedor, compra, inventario*, categoria, ordencompra*, listaMercado*, detalleCompra*
+    // TODO: These would be the possible tables for the scheme: insumo, proveedor, compra, inventario*, categoria, ordencompra*, listaMercado*
 
     /*
     tableSchema({
@@ -28,12 +32,22 @@ export default appSchema({
       colums: [
         { name: 'description', type: 'string' },
         { name: 'cantidad', type: 'number' },
-        { name: 'is_precio', type: 'boolean'},
+        { name: 'is_precio', type: 'boolean' },
+      ]
+    }),
+    tableSchema({
+      name:'inventario',
+      colums: [
+        { name: 'insumo_id', type: 'string', isIndexed: true },
+        { name: 'added_at', type: 'number'},
+        { name: "stock", type: "number" },
+
       ]
     }),
     tableSchema({
       name:'proveedor',
       colums: [
+        { name: 'insumo_id', type: 'string', isIndexed: true },
         { name: 'nombre', type: 'string' },
         { name: 'contacto', type: 'string' },
         { name: 'direccion', type: 'string' },
@@ -42,10 +56,14 @@ export default appSchema({
     tableSchema({
       name:'listaMercado',
       colums: [
-        { name: 'cantidad_necesaria', type: 'string' },
         { name: 'insumo_id', type: 'string', isIndexed: true },
+        { name: 'proveedor_id', tyépe: 'string', isIndexed: true },
+        { name: 'cantidad_necesaria', type: 'string' },
+        { name: "created_at", type: "number" },
+        { name: "updated_at", type: "number" },
       ]
     }),
+    
     */
 
   ]
