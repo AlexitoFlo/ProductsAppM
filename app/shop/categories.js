@@ -1,4 +1,6 @@
 import { View, TextInput, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { Picker } from "@react-native-picker/picker";
+import { useRef, useState } from "react";
 
 const styles = StyleSheet.create({
   container: {
@@ -31,11 +33,23 @@ const styles = StyleSheet.create({
 });
 
 export default function Categories() {
+  const [selectedValue, setSelectedValue] = useState();
+
   return (
     <View style={styles.container}>
       <TextInput placeholder="Producto" style={styles.input} />
       <TextInput placeholder="Cantidad" style={styles.input} keyboardType="numeric" />
       <TextInput placeholder="$ Precio" style={styles.input} keyboardType="numeric" />
+
+      <Text style={{ fontSize: 20, marginBottom: 20 }}>Elige una categoría</Text>
+      <Picker
+        selectedValue={selectedValue}
+        style={{ height: 50, width: 150 }}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="Vegetales" value="veg" />
+        <Picker.Item label="Frutas" value="fru" />
+      </Picker>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Guardar</Text>
       </TouchableOpacity>
