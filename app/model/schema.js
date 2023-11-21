@@ -24,7 +24,7 @@ export default appSchema({
       ]
     }),
 
-    // TODO: These would be the possible tables for the scheme: insumo, proveedor, compra, inventario*, categoria, ordencompra*, listaMercado*
+    // TODO: These would be the possible tables for the scheme: insumo, proveedor, compra, inventario*, categoria*, ordencompra*, listaCompra, insumo_proveedor
 
     /*
     tableSchema({

@@ -28,7 +28,7 @@ export default function Layout() {
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
-              name={focused ? "add-circle" : "add-circle-outline"}
+              name={focused ? "list-circle" : "list-circle-outline"}
               size={22}
               color="#85A43D"
             />
